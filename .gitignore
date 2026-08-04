@@ -1,0 +1,24 @@
+# .gitignore
+
+# Virtual environment
+.venv/
+
+# Environment variables (SECRET - never push this)
+.env
+
+# Python cache files
+__pycache__/
+*.pyc
+*.pyo
+
+# Uploaded files (user data - don't push)
+uploads/*
+!uploads/.gitkeep
+
+# IDE files
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db

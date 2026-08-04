@@ -1,0 +1,71 @@
+Sarah Williams
+sarah.williams@techpro.com
++44-7700-900123
+London, UK
+linkedin.com/in/sarahwilliams
+github.com/sarahwdev
+sarahwilliams.io
+
+PROFESSIONAL SUMMARY
+Senior Full Stack Engineer with 8 years of experience designing and 
+building scalable web applications. Proven track record of leading 
+engineering teams and delivering high-impact products. Expertise in 
+Python, React, and cloud infrastructure on AWS.
+
+WORK EXPERIENCE
+
+Senior Software Engineer | TechCorp London | March 2021 - Present
+London, UK
+- Led a team of 5 engineers to redesign the core API platform
+- Reduced API response time by 40% through caching optimization
+- Implemented CI/CD pipelines using GitHub Actions and Docker
+- Mentored 3 junior developers through code reviews and pair programming
+- Technologies used: Python, FastAPI, PostgreSQL, Redis, Docker, AWS
+
+Software Engineer | StartupXYZ | January 2019 - February 2021
+Remote
+- Built and maintained React frontend serving 50,000 daily active users
+- Designed RESTful APIs using Django REST Framework
+- Migrated legacy MySQL database to PostgreSQL with zero downtime
+- Technologies: Python, Django, React, MySQL, PostgreSQL
+
+Junior Developer | WebAgency Ltd | June 2016 - December 2018
+Manchester, UK
+- Developed client websites using WordPress and custom PHP
+- Built e-commerce solutions using WooCommerce
+- Technologies: PHP, WordPress, JavaScript, MySQL
+
+EDUCATION
+Master of Science in Software Engineering
+University of Manchester
+2014 - 2016
+Distinction
+
+Bachelor of Science in Computer Science
+University of Leeds
+2011 - 2014
+First Class Honours
+
+SKILLS
+Languages: Python, JavaScript, TypeScript, PHP, SQL
+Frameworks: FastAPI, Django, React, Node.js, Express
+Databases: PostgreSQL, MySQL, MongoDB, Redis
+Cloud: AWS (EC2, S3, Lambda, RDS), Docker, Kubernetes
+Tools: Git, GitHub Actions, Jira, Figma
+Methodologies: Agile, Scrum, TDD, CI/CD
+
+PROJECTS
+Open Source API Rate Limiter
+A reusable rate limiting middleware for FastAPI applications.
+500+ GitHub stars.
+Technologies: Python, FastAPI, Redis
+
+CERTIFICATIONS
+AWS Certified Solutions Architect - Associate
+Google Cloud Professional Developer
+Certified Kubernetes Administrator (CKA)
+
+LANGUAGES
+English (Native)
+French (Fluent)
+German (Basic)

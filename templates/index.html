@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ app_name }}</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+
+    <!-- ── Header ───────────────────────────────────────────── -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">
+                <span class="logo-icon">📄</span>
+                <div>
+                    <h1>{{ app_name }}</h1>
+                    <p>v{{ app_version }} · Powered by {{ model_name }}</p>
+                </div>
+            </div>
+            <a href="/docs" target="_blank" class="docs-link">
+                API Docs ↗
+            </a>
+        </div>
+    </header>
+
+    <!-- ── Main Content ─────────────────────────────────────── -->
+    <main class="main">
+
+        <!-- Upload Section -->
+        <section class="upload-section">
+            <div class="upload-card">
+
+                <h2>Upload Your Resume</h2>
+                <p class="subtitle">
+                    Upload a PDF or DOCX resume and get structured 
+                    JSON output in seconds.
+                </p>
+
+                <!-- Drop Zone -->
+                <div class="drop-zone" id="dropZone">
+                    <div class="drop-zone-content">
+                        <span class="upload-icon">☁️</span>
+                        <p class="drop-text">
+                            Drag & drop your resume here
+                        </p>
+                        <p class="drop-subtext">or</p>
+                        <label for="fileInput" class="browse-btn">
+                            Browse File
+                        </label>
+                        <input 
+                            type="file" 
+                            id="fileInput" 
+                            accept=".pdf,.docx"
+                            style="display: none;"
+                        >
+                        <p class="file-types">
+                            Supported: PDF, DOCX · Max 5MB
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Selected File Info -->
+                <div class="file-info" id="fileInfo" style="display:none;">
+                    <span class="file-icon">📎</span>
+                    <span class="file-name" id="fileName"></span>
+                    <span class="file-size" id="fileSize"></span>
+                    <button class="remove-btn" id="removeFile">✕</button>
+                </div>
+
+                <!-- Parse Button -->
+                <button 
+                    class="parse-btn" 
+                    id="parseBtn" 
+                    disabled
+                >
+                    Parse Resume
+                </button>
+
+            </div>
+        </section>
+
+        <!-- Loading Section (hidden by default) -->
+        <section class="loading-section" id="loadingSection" 
+                 style="display:none;">
+            <div class="loading-card">
+                <div class="spinner"></div>
+                <h3>Parsing your resume...</h3>
+                <p id="loadingMessage">
+                    Extracting text and analyzing with AI
+                </p>
+                <div class="loading-steps">
+                    <div class="step" id="step1">
+                        ✅ File uploaded
+                    </div>
+                    <div class="step active" id="step2">
+                        ⏳ Extracting text...
+                    </div>
+                    <div class="step" id="step3">
+                        ○ AI parsing...
+                    </div>
+                    <div class="step" id="step4">
+                        ○ Validating output...
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Error Section (hidden by default) -->
+        <section class="error-section" id="errorSection" 
+                 style="display:none;">
+            <div class="error-card">
+                <span class="error-icon">⚠️</span>
+                <h3 id="errorCode">Error</h3>
+                <p id="errorMessage">Something went wrong.</p>
+                <p class="error-hint" id="errorHint"></p>
+                <button class="try-again-btn" id="tryAgainBtn">
+                    Try Again
+                </button>
+            </div>
+        </section>
+
+        <!-- Results Section (hidden by default) -->
+        <section class="results-section" id="resultsSection" 
+                 style="display:none;">
+
+            <!-- Metadata Bar -->
+            <div class="metadata-bar">
+                <div class="meta-item">
+                    <span class="meta-label">Processing Time</span>
+                    <span class="meta-value" id="metaTime">-</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Words Extracted</span>
+                    <span class="meta-value" id="metaWords">-</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">File Size</span>
+                    <span class="meta-value" id="metaSize">-</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Model</span>
+                    <span class="meta-value" id="metaModel">-</span>
+                </div>
+            </div>
+
+            <!-- Results Tabs -->
+            <div class="tabs">
+                <button class="tab active" data-tab="formatted">
+                    📋 Formatted View
+                </button>
+                <button class="tab" data-tab="json">
+                    { } Raw JSON
+                </button>
+            </div>
+
+            <!-- Formatted View -->
+            <div class="tab-content active" id="tab-formatted">
+                <div class="result-grid" id="resultGrid">
+                    <!-- Filled by JavaScript -->
+                </div>
+            </div>
+
+            <!-- Raw JSON View -->
+            <div class="tab-content" id="tab-json">
+                <div class="json-toolbar">
+                    <button class="copy-btn" id="copyJson">
+                        📋 Copy JSON
+                    </button>
+                </div>
+                <pre class="json-output" id="jsonOutput"></pre>
+            </div>
+
+            <!-- Parse Another Button -->
+            <div class="parse-another">
+                <button class="parse-another-btn" id="parseAnotherBtn">
+                    ↑ Parse Another Resume
+                </button>
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- ── Footer ────────────────────────────────────────────── -->
+    <footer class="footer">
+        <p>
+            Resume Parser API · Built with FastAPI + Groq LLaMA 3
+        </p>
+    </footer>
+
+    <script src="/static/js/app.js"></script>
+</body>
+</html>
